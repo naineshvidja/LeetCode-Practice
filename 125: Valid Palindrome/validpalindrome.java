@@ -1,23 +1,23 @@
 import java.util.*;
-public class validpalindrome{
+public class validpalindrome2{
     public boolean isPalindrome(String s) {
         s=s.toLowerCase();
         s=s.replaceAll("\\s","");
         s=s.replaceAll("[^a-zA-Z0-9]", "");
         if(s.length()==1 || s.length()==0)
             return true;
-        Stack<String> stack = new Stack<>();
+        Stack<Character> stack = new Stack<>();
         String ans= new String();
         for(int i=0;i<s.length();i++)
         {
-            String c = s.substring(i,i+1);
+            char c = s.charAt(i);
             stack.push(c);
         }
         
         for(int i=0;i<s.length();i++)
         {
-            String sc= stack.pop();
-            ans.concat(sc);
+            char sc= stack.pop();
+            ans=ans+sc;
         }
         if(ans.equals(s))
             return true;
@@ -43,3 +43,4 @@ public class validpalindrome{
         System.out.println(b3);
     }
 }
+
